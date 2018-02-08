@@ -3,6 +3,7 @@ require('dotenv').config();
 //모듈 등록
 const Koa = require('koa');
 const Router = require('koa-router');
+const bodyParser = require('koa-bodyparser');
 
 //환경설정 오브젝트 변수 선언
 const {
@@ -21,8 +22,11 @@ const router = new Router();
 //몽고db 연결
 db.connect();
 
+//바디파서 적용
+app.use(bodyParser());
 //koa라우트 메서드 등록
 app.use(router.routes()).use(router.allowedMethods);
+
 
 router.use('/api', api.routes());
 router.get('/', ctx => {

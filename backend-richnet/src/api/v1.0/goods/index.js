@@ -7,8 +7,10 @@ const goodsCtrl = require('./goods.ctrl');
 //인스턴스 생성
 const goods = new Router();
 
-goods.get('/', ctx => {
-  ctx.body = "상품 데이터 등록 완료"
-});
+goods.post('/', goodsCtrl.create);
+goods.get('/', goodsCtrl.list);
+goods.get('/:id', goodsCtrl.get);
+goods.delete('/:id', goodsCtrl.delete);
+goods.patch('/:id', goodsCtrl.update);
 
 module.exports = goods;
