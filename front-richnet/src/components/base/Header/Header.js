@@ -7,14 +7,14 @@ const Header = ({ right, userMenu }) => {
     <header className="base header">
       <Responsive className="header-wrapper">
         <div className="brand">
-            RN CENTER 
+           Rich.net 
         </div>
         <nav>
           <a className="active" href="/">트렌딩</a>
           <a>구매</a>
           <a>이벤트</a>
           <a>갤러리</a>
-          <a>고객센터/구매후기</a>
+          <a>고객센터</a>
           <a>소식방</a>
         </nav>
         <div className="right">
